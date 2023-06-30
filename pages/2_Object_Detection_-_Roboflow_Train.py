@@ -67,7 +67,7 @@ def run_inference(workspace_id, model_id, version_number, uploaded_img, inferenc
     st.write("#### Uploaded Image")
     st.image(uploaded_img, caption="Uploaded Image", use_column_width=True)
 
-    predictions = model.predict(uploaded_img, overlap=int(st.session_state['overlap_threshold']),
+    predictions = model.predict(uploaded_img),
         confidence=int(confidence_threshold), stroke=int(st.session_state['box_width']))
 
     predictions_json = predictions.json()
@@ -220,8 +220,7 @@ model = version.model
 
 img = cv2.imread(img_path)
 ## perform inference on the selected image
-predictions = model.predict(img_path, confidence={st.session_state["confidence_threshold"]},
-    overlap={st.session_state["overlap_threshold"]})'''
+predictions = model.predict(img_path, confidence={st.session_state["confidence_threshold"]})'''
 
     customization_code = ""
 
