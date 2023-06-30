@@ -68,7 +68,7 @@ def run_inference(workspace_id, model_id, version_number, uploaded_img, inferenc
     st.image(uploaded_img, caption="Uploaded Image", use_column_width=True)
 
     predictions = model.predict(uploaded_img,
-    confidence=int(confidence_threshold), stroke=int(st.session_state['box_width']))
+    confidence=int(confidence_threshold))
 
     predictions_json = predictions.json()
 
